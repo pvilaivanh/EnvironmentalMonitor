@@ -1,0 +1,15 @@
+﻿{
+  "Created": "2026-03-11T14:30:48.923577-04:00",
+  "Indoor": {
+    "TemperatureF": 91.977669446442,
+    "TemperatureC": 33.32092747024555,
+    "Humidity": 4.007829896356407
+  },
+  "Outdoor": {
+    "TemperatureF": 82.544,
+    "TemperatureC": 28.08,
+    "Humidity": 49,
+    "Description": "overcast clouds"
+  },
+  "IndoorTempChange": 0
+}

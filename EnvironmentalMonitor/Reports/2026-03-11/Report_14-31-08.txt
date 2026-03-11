@@ -1,0 +1,12 @@
+﻿Environmental Report
+=====================
+Created: 3/11/2026 2:31:08 PM
+
+Indoor Temperature (F): 141.07
+Indoor Humidity: 2.47%
+
+Outdoor Temperature (F): 82.54
+Outdoor Humidity: 49%
+Condition: overcast clouds
+
+Indoor Temp Change Since Last Report: 36.81 F
