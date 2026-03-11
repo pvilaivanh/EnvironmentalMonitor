@@ -16,8 +16,8 @@ namespace EnvironmentalMonitor.Services
     /// operation.</remarks>
     public class WeatherService
     {
-        private readonly string _apiKey = "f7624dc4094ebbb713cf0d427bb80089";
-        private readonly string _city = "Elizabethton";
+        private readonly string _apiKey = "YOUR_API_KEY_HERE";
+        private readonly string _city = "CITY";
 
         /// <summary>
         /// Asynchronously retrieves the current weather data for the configured city from the OpenWeatherMap API.
