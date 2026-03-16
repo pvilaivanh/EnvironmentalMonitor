@@ -65,11 +65,11 @@ namespace EnvironmentalMonitor
         }
 
         /// <summary>
-        /// Generates a summary report for a user-specified date range by prompting for start and end dates.
+        /// Prompts the user for a date range and generates a summary report for the specified period.
         /// </summary>
-        /// <remarks>The method requests the start and end dates from the user in the 'yyyy-MM-dd' format.
-        /// If the input is not a valid date, an error message is displayed and the report is not generated. The report
-        /// is created using the SummaryReportService and covers the specified date range.</remarks>
+        /// <remarks>The method expects dates to be entered in the format yyyy-MM-dd. The end date is
+        /// inclusive; the report covers all data from the start date through the end date. If the input is invalid, no
+        /// report is generated.</remarks>
         public static void GenerateSummary()
         {
             Console.WriteLine("Enter start date (yyyy-MM-dd): ");
