@@ -15,7 +15,7 @@ namespace EnvironmentalMonitor.Services
     /// to automate summary report generation for environmental monitoring data.</remarks>
     public class SummaryReportService
     {
-        private readonly string _reportDirectory = "Reports";
+        private readonly string _reportDirectory = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "Reports");
 
         /// <summary>
         /// Generates a summary report based on JSON files created within the specified date range.
@@ -33,7 +33,7 @@ namespace EnvironmentalMonitor.Services
                 return;
             }
 
-            var files = Directory.GetFiles(_reportDirectory, "*.json");
+            var files = Directory.GetFiles(_reportDirectory, "*.json", SearchOption.AllDirectories);
 
             var selectReports = new List<JsonElement>();
 
@@ -46,7 +46,7 @@ namespace EnvironmentalMonitor.Services
 
                 if (created >= startDate && created <= endDate) // Check if the report's creation date falls within the specified range
                 {
-                    selectReports.Add(doc.RootElement);
+                    selectReports.Add(doc.RootElement.Clone());
                 }
             }
 
@@ -87,14 +87,14 @@ namespace EnvironmentalMonitor.Services
         {
             string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
             
-            string readablePath = Path.Combine("Reports", $"Summary_{timestamp}.txt");
-            string jsonPath = Path.Combine("Reports", $"Summary_{timestamp}.json");
+            string readablePath = Path.Combine(_reportDirectory, $"Summary_{timestamp}.txt");
+            string jsonPath = Path.Combine(_reportDirectory, $"Summary_{timestamp}.json");
 
             string readable = $"Summary Report\n" +
-                                     $"Start Date: {start}\n" +
-                                     $"End Date: {end}\n" +
+                                     $"Start Date: {start:yyyy-MM-dd}\n" +
+                                     $"End Date: {end.AddDays(-1):yyyy-MM-dd}\n" +
                                      $"Reports Included: {reportCount}\n" +
-                                     $"Indoor Temperature Change: {tempChange}";
+                                     $"Indoor Temperature Change: {tempChange:F2} F";
 
             File.WriteAllText(readablePath, readable);
 

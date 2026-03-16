@@ -72,25 +72,25 @@ namespace EnvironmentalMonitor
         /// is created using the SummaryReportService and covers the specified date range.</remarks>
         public static void GenerateSummary()
         {
-            // Prompts the user to enter a start and end date for the summary report, validates the input, and generates the report using the SummaryReportService.
-            try
+            Console.WriteLine("Enter start date (yyyy-MM-dd): ");
+            string startInput = Console.ReadLine();
+
+            Console.WriteLine("Enter end date (yyyy-MM-dd): ");
+            string endInput = Console.ReadLine();
+
+            if (!DateTime.TryParse(startInput, out DateTime start) ||
+                !DateTime.TryParse(endInput, out DateTime end))
             {
-                Console.WriteLine("Enter start date (yyyy-MM-dd): ");
-                DateTime start = DateTime.Parse(Console.ReadLine()!);
-
-                Console.WriteLine("Enter end date (yyyy-MM-dd): ");
-                DateTime end = DateTime.Parse(Console.ReadLine()!);
-
-                SummaryReportService summaryService = new SummaryReportService();
-                summaryService.GenerateSummary(start, end);
-
-                Console.WriteLine("Summary report generated (if data exists).");
+                Console.WriteLine("Invalid date format. Please use yyyy-MM-dd.");
+                return;
             }
-            // Catches any exceptions that occur during date parsing and displays an error message if the input format is invalid.
-            catch
-            {
-                Console.WriteLine("Invalid date format.");
-            }
+
+            end = end.AddDays(1); // include the full end date
+
+            SummaryReportService summaryService = new SummaryReportService();
+            summaryService.GenerateSummary(start, end);
+
+            Console.WriteLine("Summary report generated (if data exists).");
         }
     }
 }

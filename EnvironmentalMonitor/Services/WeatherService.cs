@@ -17,7 +17,7 @@ namespace EnvironmentalMonitor.Services
     public class WeatherService
     {
         private readonly string _apiKey = "YOUR_API_KEY_HERE";
-        private readonly string _city = "CITY";
+        private readonly string _city = "CITY_HERE";
 
         /// <summary>
         /// Asynchronously retrieves the current weather data for the configured city from the OpenWeatherMap API.
