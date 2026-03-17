@@ -62,8 +62,8 @@ namespace EnvironmentalMonitor.Services
                 // Wait for a UDP packet to be received
                 try
                 {
-                    byte[] date = udpServer.Receive(ref remoteEndPoint); // Receive data from the remote endpoint
-                    string json = Encoding.UTF8.GetString(date); // Convert the received byte array to a string using UTF-8 encoding
+                    byte[] data = udpServer.Receive(ref remoteEndPoint); // Receive data from the remote endpoint
+                    string json = Encoding.UTF8.GetString(data); // Convert the received byte array to a string using UTF-8 encoding
 
                     Console.WriteLine($"Received: {json})");
                     LoggerService.LogInfo($"Received data from {remoteEndPoint.Address}: {json}");
