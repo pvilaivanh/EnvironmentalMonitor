@@ -1,0 +1,42 @@
+[
+  {
+    "Username": "testuser",
+    "FirstName": "John",
+    "MiddleInitial": null,
+    "LastName": "Doe",
+    "Address": "123 Main St",
+    "PasswordHash": "$2a$11$g6zile60xAcVq3lt8ecnke1lrR2W2pXx5brbEbt/gulmhgK9M9bVW",
+    "StartingLocation": "New York",
+    "Theme": "light"
+  },
+  {
+    "Username": "testuser1",
+    "FirstName": "John",
+    "MiddleInitial": "B",
+    "LastName": "Smith",
+    "Address": "124 Main St",
+    "PasswordHash": "$2a$11$PlCyEhH/knTLWs6KO6mu1O5Xgv0Tbvh3DO7JBRMF82eKc58FvaJCq",
+    "StartingLocation": "New York",
+    "Theme": "light"
+  },
+  {
+    "Username": "myuser",
+    "FirstName": "Test",
+    "MiddleInitial": "A",
+    "LastName": "User",
+    "Address": "123 Main St",
+    "PasswordHash": "$2a$11$emNwF1i7k2MvffehoeLMZ.LrS9mKwjiND/nSFQivjb13N/v0U03lS",
+    "StartingLocation": "New York",
+    "Theme": "light"
+  },
+  {
+    "Username": "pvilaivanh",
+    "FirstName": "Punoi",
+    "MiddleInitial": "K",
+    "LastName": "Vilaivanh",
+    "Address": "1522 BROAD ST",
+    "PasswordHash": "$2a$11$Ampc1mtMYnVc6iRpzF5dnOx6otMhaGajARw.XfrEXNQAYfiWx5CLi",
+    "StartingLocation": "Elizabethton",
+    "Theme": "light"
+  }
+]
